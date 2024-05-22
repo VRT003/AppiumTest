@@ -10,10 +10,10 @@ public class AppiumTest extends TestBase {
 
     @Test
     @DisplayName("General Store app")
-    @Description("Åpne appen")
-    @Step("Åpne General store app")
+    @Description("Åpne appen og add product to cart")
+    @Step("Åpne General store app og add product to cart")
     public void AppTest() {
-        generalStore.Testflow();
+       generalStore.Testflow();
     }
 
 

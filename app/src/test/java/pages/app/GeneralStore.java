@@ -17,6 +17,7 @@ public class GeneralStore extends TestBase{
     @Step("Velg sted, legg sko til kart")
     public void Testflow(){
         driver.findElement(By.id("android:id/text1")).click();
+        Allure.step("Klikket på Sted");
 
         String uiSelector = "new UiSelector().textMatches(\"" + text
                 + "\")";

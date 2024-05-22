@@ -57,5 +57,5 @@ dependencies {
     testImplementation("org.junit.platform:junit-platform-suite:1.10.1")
     testImplementation("com.googlecode.json-simple:json-simple:1.1.1")
     testImplementation("com.fasterxml.jackson.core:jackson-databind:2.16.0")
-    testImplementation("io.qameta.allure", "allure-junit4", "2.24.0")
+    testImplementation("io.qameta.allure", "allure-junit4", "2.27.0")
 }

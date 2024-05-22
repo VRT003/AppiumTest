@@ -35,7 +35,11 @@ public class utils {
                 .setAutomationName("UIAutomator2")
                 .setAppPackage("com.androidsample.generalstore")
                 .setAppActivity("com.androidsample.generalstore.MainActivity")
+                .setFullReset(false)
+                .setNoReset(true)
                 .setApp("C:\\Users\\VRT003\\Documents\\Mobile Demo app\\apk\\General-Store.apk");
+        options.setCapability("forceAppLaunch", "true");
+        options.setCapability("–session-override", "true");
         return options;
     }
 
