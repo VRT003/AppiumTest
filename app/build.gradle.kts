@@ -46,8 +46,8 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
     implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    //testImplementation("junit:junit:4.13.2")
+   // testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
@@ -57,5 +57,28 @@ dependencies {
     testImplementation("org.junit.platform:junit-platform-suite:1.10.1")
     testImplementation("com.googlecode.json-simple:json-simple:1.1.1")
     testImplementation("com.fasterxml.jackson.core:jackson-databind:2.16.0")
-    testImplementation("io.qameta.allure", "allure-junit4", "2.27.0")
+    //testImplementation("io.qameta.allure", "allure-junit4", "2.27.0")
+
+    // Define the version of Allure you want to use via the allureVersion property
+    val allureVersion = "2.27.0"
+// ...
+        // Import allure-bom to ensure correct versions of all the dependencies are used
+        testImplementation(platform("io.qameta.allure:allure-bom:$allureVersion"))
+        // Add necessary Allure dependencies to dependencies section
+        testImplementation("io.qameta.allure:allure-junit4")
+
+
+    // Define the version of AspectJ
+    val aspectJVersion = "1.9.21"
+
+// Define configuration for AspectJ agent
+    val agent: Configuration by configurations.creating {
+        isCanBeConsumed = true
+        isCanBeResolved = true
+    }
+
+    dependencies {
+        // Add aspectjweaver dependency
+        agent("org.aspectj:aspectjweaver:${aspectJVersion}")
+    }
 }
